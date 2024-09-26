@@ -95,9 +95,11 @@
 		animateInsertRow = true;
 		isAnimatingRow = true;
 
-		document.getElementById('coinkick-main-layout').scrollTo({ top: 0, behavior: 'smooth' });
-
+		// document.getElementById('coinkick-main-layout').scrollTo({ top: 0, behavior: 'smooth' });
 		data = [rowData, ...data.slice(0, 9)];
+
+		// let tempData = Array.from(data).slice(0, 9)
+		// data = [rowData, ...Array.from(tempData)]
 
 		setTimeout(() => {
 			animateInsertRow = false;
