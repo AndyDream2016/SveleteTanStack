@@ -95,13 +95,14 @@
 		animateInsertRow = true;
 		isAnimatingRow = true;
 
+		document.getElementById('coinkick-main-layout').scrollTo({ top: 0, behavior: 'smooth' });
+
 		data = [rowData, ...data.slice(0, 9)];
-		animateInsertRow = false;
-		isAnimatingRow = false;
-		// setTimeout(() => {
-		// 	animateInsertRow = false;
-		// 	isAnimatingRow = false;
-		// }, 500);
+
+		setTimeout(() => {
+			animateInsertRow = false;
+			isAnimatingRow = false;
+		}, 500);
 	};
 
 	// export const deleteRow = (index = 0) => {
