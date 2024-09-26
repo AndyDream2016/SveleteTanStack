@@ -1,0 +1,17 @@
+{
+	"/": [
+		"src/routes/+layout.js",
+		"src/routes/+layout.server.js"
+	],
+	"/[lang]/(site)": [
+		"src/routes/[lang]/(site)/+page.server.js",
+		"src/routes/+layout.js",
+		"src/routes/+layout.server.js",
+		"src/routes/+layout.js",
+		"src/routes/+layout.server.js"
+	],
+	"/[lang]/(site)/404": [
+		"src/routes/+layout.js",
+		"src/routes/+layout.server.js"
+	]
+}
