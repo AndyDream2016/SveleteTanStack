@@ -26,6 +26,7 @@
 	let items = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
 	const items2 = Array(2).fill(0);
 	const items3 = Array(15).fill(0);
+	let hoverCard = false;
 
 	let tradeContainer = $state();
 
@@ -54,17 +55,21 @@
 	});
 	let tradeId = $state(11);
 	function handleNewTrade(newTrade) {
-		tradeId++;
-		newTrade.id = tradeId;
-		trades.unshift(newTrade);
-		trades = trades.slice(0, 21);
-		tradeContainer.scrollTo({ left: 0, behaviour: 'smooth' });
+		if(!hoverCard) {
+			tradeId++;
+			newTrade.id = tradeId;
+			// trades.unshift(newTrade);
+			// trades = trades.slice(0, 21);
+			trades = [newTrade, ...trades.slice(0, 20)]
+			// tradeContainer.scrollTo({ left: 0, behaviour: 'smooth' });
+		}
 	}
 	let recentBuysInterval = $state();
 	onMount(() => {
 		recentBuysInterval = setInterval(() => {
 			handleNewTrade({
-				id: trades.length + Math.random() * 1000,
+				// id: trades.length + Math.random() * 1000,
+				id: 0,
 				type: 'TEST',
 				network: 'ethereum',
 				address: '0x6d551bd441fb65513c0d815747b3409c1eb56886',
@@ -100,11 +105,18 @@
 		>
 			{#if trades.length > 0}
 				{#each trades as trade (trade.id)}
+					<!-- svelte-ignore a11y_no_static_element_interactions -->
 					<div
 						class="w-[280px] snap-center"
 						animate:flip={{ duration: 300 }}
 						in:fly={{ x: -100, duration: 300 }}
 						out:fly={{ x: 100, duration: 300 }}
+						onmouseenter={
+							() => { hoverCard = true }
+						}
+						onmouseleave={
+							() => { hoverCard = false }
+						}
 					>
 						<LatestTrade
 							type={trade.type}
