@@ -109,7 +109,7 @@
 		<Marqueeck
 			--marqueeck-x-pad="0"
 			class="padding-0 margin-0"
-			options={{ direction: 'left', speed: 100, brakeDuration: 500 }}
+			options={{ direction: 'left', speed: 100, brakeDuration: 500, childTransition: 'none' }}
 		>
 			<button class="flex space-x-2 no-scrollbar" onclick={handleUnfocus}>
 				{#each coins as coin}
