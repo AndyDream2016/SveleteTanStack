@@ -1,0 +1,147 @@
+@import 'tailwindcss';
+
+$topbar: 32px;
+$header: 68px;
+$headerMobile: 56px;
+$leaderboard: 68px;
+$pageMinus: 164px;
+
+.topbar {
+	height: $topbar;
+}
+.page {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	flex-grow: 1;
+}
+.full-page {
+	height: calc(100dvh - 168px);
+}
+.header {
+	height: $header;
+}
+.leaderboard {
+	height: $leaderboard;
+}
+@media (max-width: 767px) {
+	.header {
+		height: $headerMobile;
+	}
+	.page {
+		height: calc(100% - 278px);
+	}
+}
+
+@theme {
+	--font-size-xxs: 0.7rem;
+	--font-size-xxs--line-height: 0.7rem;
+	--font-size-xs: 0.75rem;
+	--font-size-xs--line-height: 0.75rem;
+	--font-size-sm: 0.9rem;
+	--font-size-sm--line-height: 0.9rem;
+	--font-size-base: 0.95rem;
+	--font-size-base--line-height: 1rem;
+	--font-size-content: 1rem;
+	--font-size-content--line-height: 1.8rem;
+	--radius-button: 0.6rem;
+	--spacing-page: 1rem;
+	--spacing-pageMobile: 0.5rem;
+	--color-text: #3f3e4e;
+	--color-textActive: #000000;
+	--color-background: #ffffff;
+	--color-sidebar: #ffffff;
+	--color-card: #ffffff;
+	--color-border: #dcdcdc;
+	--color-borderLight: #dcdcdc;
+	--color-sidebarBorder: #2e3436;
+	--color-headerBorder: #2e3436;
+	--color-sidebarHover: #ecfff7;
+	--color-sidebarActive: #ccf0e2;
+	--color-modal: #ffffff;
+	--color-modalTint: #ebebeb;
+	--color-modalTintHover: #dcdcdc;
+	--color-primary: #0b452d;
+	--color-primaryTint: #7abf4d;
+	--color-primaryButton: #ffffff;
+	--color-secondary: #ff69b4;
+	--color-third: #f3f3f3;
+	--color-tint: #ccf0e2;
+	--color-tintText: #6f8481;
+	--color-tintText: #000;
+	--color-tintHover: #263148;
+	--color-active: #0b452d;
+	--color-logo: #0b452d;
+	--color-logoSecond: #0b452d;
+	--color-highlight: #000000;
+	--color-invert: #ffffff;
+	--color-switch: #a5a5a5;
+	--color-switchChecked: #34c759;
+	--color-menu: #ffffff;
+	--color-menuItem: #f7f7f7;
+	--color-menuTint: #ccf0e2;
+	--color-menuBorder: #dcdcdc;
+	--color-iconHover: #ccf0e2;
+	--color-inputFill: #f0f2f5;
+	--color-inputFillBorder: #ebebeb;
+	--color-inputFillText: #000000;
+	--color-inputHover: #f9f9f9;
+	--color-inputSelected: #cdffad;
+	--color-error: #ff6666;
+	--color-gold: #d09829;
+	--color-silver: #949494;
+	--color-bronze: #a2533a;
+	--color-drawerItem: #232326;
+	--color-overlay: #262626;
+	--color-badge: #dcdcdc;
+	--color-badgeText: #000000;
+	--color-badgeTextActive: #ffffff;
+}
+
+[data-theme='dark'] {
+	--color-primary: #a2ff66;
+	--color-primaryButton: #000000;
+	--color-third: #171717;
+	--color-text: #858585;
+	--color-textActive: #ffffff;
+	--color-background: #000000;
+	--color-sidebar: #000000;
+	--color-sidebarHover: #16181a;
+	--color-sidebarActive: #0a1406;
+	--color-card: #171717;
+	--color-modal: #171717;
+	--color-modalTint: #020101;
+	--color-modalTintHover: #434343;
+	--color-tint: #0a1406;
+	--color-tintText: #858585;
+	--color-tintHover: #263148;
+	--color-border: #3e3e40;
+	--color-borderLight: #232323;
+	--color-sidebarBorder: #3e3e40;
+	--color-headerBorder: #3e3e40;
+	--color-active: #a2ff66;
+	--color-logo: #a2ff66;
+	--color-logoSecond: #ffffff;
+	--color-highlight: #ffffff;
+	--color-invert: #000000;
+	--color-switch: #39383d;
+	--color-switchChecked: #34c759;
+	--color-menu: #000000;
+	--color-menuItem: #1c1e23;
+	--color-menuTint: #1c2716;
+	--color-menuBorder: #3e3e40;
+	--color-iconHover: #1c1c1c;
+	--color-inputFill: #1e2025;
+	--color-inputFillBorder: #1b1c1a;
+	--color-inputFillText: #787878;
+	--color-inputHover: #0a0a0a;
+	--color-drawerItem: #232326;
+	--color-overlay: #000000;
+	--color-badge: #858585;
+	--color-badgeText: #000000;
+	--color-badgeTextActive: #000000;
+}
+
+@import 'reset.scss';
+@import 'layout.scss';
+@import 'theme.scss';
